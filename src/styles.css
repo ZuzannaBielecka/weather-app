@@ -80,4 +80,7 @@ img#week-images {
 .footer {
   text-align: center;
   font-size: small;
+  font-family: "Roboto", sans-serif;
+  color: #272044;
+  padding: 10px;
 }
