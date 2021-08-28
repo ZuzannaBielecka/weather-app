@@ -1,0 +1,78 @@
+.container {
+  font-family: "Roboto", sans-serif;
+  margin-top: 20px;
+  max-width: 500px;
+  background-color: #bcdbdf;
+  padding: 25px;
+  border-radius: 10px;
+  color: #272044;
+}
+h2 {
+  margin-top: 30px;
+  font-size: 60px;
+}
+
+#current-weather {
+  vertical-align: top;
+  display: inline;
+}
+
+#current-parameters {
+  display: inline;
+}
+
+#current-temperature {
+  font-size: 60px;
+}
+.cAndF {
+  font-size: small;
+  vertical-align: center;
+}
+
+.C:hover,
+.F:hover {
+  text-decoration: underline;
+  color: blue;
+}
+img#current-image {
+  width: 2cm;
+  margin-top: -30px;
+}
+
+ul {
+  padding: 0;
+}
+li {
+  font-size: 16px;
+  font-weight: 100;
+  height: 19px;
+  line-height: 1;
+  list-style: none;
+  padding: 10px;
+}
+
+.city-search {
+  margin-top: 10px;
+}
+
+#search-button {
+  background-color: #40a8c4;
+}
+
+#current-location-button {
+  background-color: #272044;
+}
+div#day-of-week {
+  text-align: center;
+}
+
+img#week-images {
+  margin: 5px;
+  width: 2.5em;
+  display: block;
+  align-items: center;
+}
+
+.forcast {
+  padding: 10px;
+}
