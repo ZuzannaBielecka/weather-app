@@ -12,9 +12,23 @@ h2 {
   font-size: 60px;
 }
 
+#description {
+  line-height: 0.5;
+}
+
+#description::first-letter {
+  text-transform: capitalize;
+}
+
 #current-weather {
   vertical-align: top;
   display: inline;
+}
+
+#icon {
+  width: 3cm;
+  margin-top: -30px;
+  padding: 5px;
 }
 
 #current-parameters {
@@ -24,29 +38,35 @@ h2 {
 #current-temperature {
   font-size: 60px;
 }
-.cAndF {
-  font-size: small;
+.units {
+  font-size: 16px;
   vertical-align: center;
+  position: relative;
+  top: -30px;
 }
 
-.C:hover,
-.F:hover {
-  text-decoration: underline;
-  color: blue;
+a {
+  text-decoration: none;
 }
-img#current-image {
-  width: 2cm;
-  margin-top: -30px;
+
+.active {
+  text-decoration: none;
+  color: #272044;
+  cursor: default;
+}
+
+.active:hover {
+  color: #272044;
 }
 
 ul {
   padding: 0;
+  margin-top: 8px;
 }
 li {
   font-size: 16px;
   font-weight: 100;
-  height: 19px;
-  line-height: 1;
+  height: 10px;
   list-style: none;
   padding: 10px;
 }
