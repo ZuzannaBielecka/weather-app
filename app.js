@@ -24,6 +24,36 @@ let now = new Date();
 let dateDisplayed = document.querySelector("#current-day");
 dateDisplayed.innerHTML = formatDate(now);
 
+function displayForcast(response) {
+  console.log(response.data.daily);
+  let forcastElement = document.querySelector("#forcast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  let forcastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forcastHTML =
+      forcastHTML +
+      `<div class="col-2">
+          <div class="day-of-week">
+              ${day}<img id="week-images" src="images/sunny.png" />
+            </div>
+            <div class="forcast-temperatures">
+              <span class="forcast-temp-max">28° </span
+              ><span class="forcast-temp-min">19°</span>
+            </div>
+          </div>`;
+  });
+  forcastHTML = forcastHTML + `</div>`;
+  forcastElement.innerHTML = forcastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "d258a15b9cfd02450a6bca5a0ce192b2";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForcast);
+}
+
 function displayWeatherConditions(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#current-temperature").innerHTML = Math.round(
@@ -47,6 +77,8 @@ function displayWeatherConditions(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemperature = Math.round(response.data.main.temp);
+
+  getForecast(response.data.coord);
 }
 function search(city) {
   let key = "d258a15b9cfd02450a6bca5a0ce192b2";
@@ -100,4 +132,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
 search("New York");

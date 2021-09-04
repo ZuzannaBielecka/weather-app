@@ -5,7 +5,7 @@
   background-color: #bcdbdf;
   padding: 25px;
   border-radius: 10px;
-  color: #272044;
+  color: #407088;
 }
 h2 {
   margin-top: 30px;
@@ -31,12 +31,17 @@ h2 {
   padding: 5px;
 }
 
+#current-city {
+  color: #272044;
+}
 #current-parameters {
   display: inline;
 }
 
 #current-temperature {
   font-size: 60px;
+  color: #272044;
+  font-weight: 600;
 }
 .units {
   font-size: 16px;
@@ -80,10 +85,13 @@ li {
 }
 
 #current-location-button {
-  background-color: #272044;
+  background-color: #407088;
 }
-div#day-of-week {
+.day-of-week {
   text-align: center;
+  color: #385170;
+  font-weight: 500;
+  opacity: 0.7;
 }
 
 img#week-images {
@@ -95,12 +103,23 @@ img#week-images {
 
 .forcast {
   padding: 10px;
+  font-size: 15px;
 }
 
+.forcast-temp-max {
+  color: #385170;
+  font-weight: 500;
+}
+
+.forcast-temp-min {
+  color: #385170;
+  font-weight: 500;
+  opacity: 0.7;
+}
 .footer {
   text-align: center;
   font-size: small;
   font-family: "Roboto", sans-serif;
-  color: #272044;
+  color: #407088;
   padding: 10px;
 }
