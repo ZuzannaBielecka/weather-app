@@ -24,25 +24,41 @@ let now = new Date();
 let dateDisplayed = document.querySelector("#current-day");
 dateDisplayed.innerHTML = formatDate(now);
 
+function calculateDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 function displayForcast(response) {
-  console.log(response.data.daily);
+  let forcast = response.data.daily;
+
   let forcastElement = document.querySelector("#forcast");
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
 
   let forcastHTML = `<div class="row">`;
 
-  days.forEach(function (day) {
-    forcastHTML =
-      forcastHTML +
-      `<div class="col-2">
+  forcast.forEach(function (forcastDay, index) {
+    if (index < 6) {
+      forcastHTML =
+        forcastHTML +
+        `<div class="col-2">
           <div class="day-of-week">
-              ${day}<img id="week-images" src="images/sunny.png" />
+              ${calculateDay(
+                forcastDay.dt
+              )}<img id="week-images" src="http://openweathermap.org/img/wn/${
+          forcastDay.weather[0].icon
+        }@2x.png" />
             </div>
             <div class="forcast-temperatures">
-              <span class="forcast-temp-max">28° </span
-              ><span class="forcast-temp-min">19°</span>
+              <span class="forcast-temp-max">${Math.round(
+                forcastDay.temp.max
+              )}° </span
+              ><span class="forcast-temp-min">${Math.round(
+                forcastDay.temp.min
+              )}°</span>
             </div>
           </div>`;
+    }
   });
   forcastHTML = forcastHTML + `</div>`;
   forcastElement.innerHTML = forcastHTML;
