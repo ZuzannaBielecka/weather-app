@@ -2,10 +2,10 @@
   font-family: "Roboto", sans-serif;
   margin-top: 20px;
   max-width: 500px;
-  background-color: #bcdbdf;
   padding: 25px;
   border-radius: 10px;
-  color: #407088;
+  background-color: #fecea8;
+  color: #45171d;
 }
 h2 {
   margin-top: 30px;
@@ -31,16 +31,13 @@ h2 {
   padding: 5px;
 }
 
-#current-city {
-  color: #272044;
-}
 #current-parameters {
   display: inline;
 }
 
 #current-temperature {
   font-size: 60px;
-  color: #272044;
+
   font-weight: 600;
 }
 .units {
@@ -67,22 +64,24 @@ li {
 }
 
 #search-button {
-  background-color: #40a8c4;
+  background-color: #ff847c;
+  border-color: #45171d;
 }
 
 #current-location-button {
-  background-color: #407088;
+  background-color: #e84a5f;
+  border-color: #45171d;
 }
 .day-of-week {
   text-align: center;
-  color: #385170;
+  color: #45171d;
   font-weight: 500;
   opacity: 0.7;
 }
 
 img#week-images {
   margin: 5px;
-  width: 2.5em;
+  width: 3.5em;
   display: block;
   align-items: center;
 }
@@ -93,12 +92,12 @@ img#week-images {
 }
 
 .forcast-temp-max {
-  color: #385170;
+  color: #45171d;
   font-weight: 500;
 }
 
 .forcast-temp-min {
-  color: #385170;
+  color: #45171d;
   font-weight: 500;
   opacity: 0.7;
 }
@@ -106,6 +105,10 @@ img#week-images {
   text-align: center;
   font-size: small;
   font-family: "Roboto", sans-serif;
-  color: #407088;
+  color: #45171d;
   padding: 10px;
+}
+
+#footer-link {
+  color: #e84a5f;
 }
